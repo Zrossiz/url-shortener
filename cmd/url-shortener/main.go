@@ -1,7 +1,9 @@
 package main
 
+import "url-shortener/internal/config"
+
 func main() {
-	// TODO: init config
+	cfg := config.MustLoad()
 
 	// TODO: init logger
 
