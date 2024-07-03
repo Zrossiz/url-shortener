@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	storagePath := "storage/shortener.sql"
+	storagePath := "storage/storage.db"
 	migrationsPath := "migrations/"
 
 	m, err := migrate.New(

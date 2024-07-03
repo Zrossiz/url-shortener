@@ -28,8 +28,6 @@ func main() {
 		os.Exit(1)
 	}
 
-	_ = storage
-
 	// TODO: init router
 
 	// TODO: run server
