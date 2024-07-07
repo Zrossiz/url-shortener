@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"os"
 	"url-shortener/internal/config"
+	"url-shortener/internal/http/handlers/url/redirect"
 	"url-shortener/internal/http/handlers/url/save"
 	mwLogger "url-shortener/internal/http/middleware/logger"
 	"url-shortener/internal/lib/logger/sl"
@@ -43,6 +44,7 @@ func main() {
 	router.Use(middleware.URLFormat)
 
 	router.Post("/url", save.New(log, storage))
+	router.Get("/{alias}", redirect.New(log, storage))
 
 	srv := &http.Server{
 		Addr:         cfg.Address,
